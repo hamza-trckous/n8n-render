@@ -2,40 +2,30 @@ services:
   - type: web
     name: n8n
     env: docker
-    region: oregon # optional (defaults to oregon)
-    plan: free # optional (defaults to starter)
-    branch: main # optional (defaults to master)
+    region: oregon
+    plan: free
+    branch: main
     numInstances: 1
     healthCheckPath: /
     envVars:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
-        fromDatabase:
-          name: n8n-db
-          property: host
-      - key: DB_POSTGRESDB_DATABASE
-        fromDatabase:
-          name: n8n-db
-          property: database
+        value: dpg-d1av9u8dl3ps73e4j2tg-a
       - key: DB_POSTGRESDB_PORT
-        fromDatabase:
-          name: n8n-db
-          property: port
+        value: 5432
+      - key: DB_POSTGRESDB_DATABASE
+        value: n8n_db_7v8d
       - key: DB_POSTGRESDB_USER
-        fromDatabase:
-          name: n8n-db
-          property: user
+        value: n8n_db_7v8d_user
       - key: DB_POSTGRESDB_PASSWORD
-        fromDatabase:
-          name: n8n-db
-          property: password
+        value: 3id39vhniI1Gll1VTdpbLNLHpE8WL2tm
       - key: DB_POSTGRESDB_SCHEMA
         value: public
       - key: WEBHOOK_URL
         value: https://your-n8n-app.onrender.com/
       - key: N8N_ENCRYPTION_KEY
-        value: YOUR_ENCRYPTION_KEY_HERE
+        value: your_strong_random_key_here
       - key: GENERIC_TIMEZONE
         value: America/Sao_Paulo
       - key: TZ
@@ -54,8 +44,3 @@ services:
         value: false
       - key: EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS
         value: false
-   
-
-databases:
-  - name: n8n-db
-    plan: starter  
