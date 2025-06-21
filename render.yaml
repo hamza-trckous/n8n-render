@@ -48,3 +48,5 @@ services:
         value: true
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: true
+      - key: N8N_DISABLE_COMMUNITY_NODES
+        value: false
