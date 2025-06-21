@@ -22,8 +22,8 @@ services:
         value: 3id39vhniI1Gll1VTdpbLNLHpE8WL2tm
       - key: DB_POSTGRESDB_SCHEMA
         value: public
-      - key: WEBHOOK_URL
-        value: https://your-n8n-app.onrender.com/
+     - key: WEBHOOK_URL
+  value: https://n8n-az33.onrender.com/
       - key: N8N_ENCRYPTION_KEY
         value: your_strong_random_key_here
       - key: GENERIC_TIMEZONE
